@@ -14,7 +14,7 @@ pipeline {
 
   //Una sección que define las herramientas “preinstaladas” en Jenkins
   tools {
-    jdk 'JDK13_Centos' //Verisión preinstalada en la Configuración del Master
+    jdk 'JDK8_Centos' //Verisión preinstalada en la Configuración del Master
     gradle 'Gradle5.0_Centos'
   }
 /*	Versiones disponibles
@@ -56,8 +56,9 @@ pipeline {
 			sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
 	  	}
 		echo '------------>Empiezo<------------'
-		sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:medicina.especializada.victor.rodriguez',
-        	sonarName:'CeibaADN-MedicinaEspecializada(victor.rodriguez)',
+		sonarqubeMasQualityGatesP(
+		    sonarKey:'co.com.ceiba.adn:medicina.especializada.victor.rodriguez',
+        	sonarName:'"CeibaADN-MedicinaEspecializada(victor.rodriguez)""',
         	sonarPathProperties:'./microservicio/sonar-project.properties')
 		echo '------------>Termino<------------'
       }
