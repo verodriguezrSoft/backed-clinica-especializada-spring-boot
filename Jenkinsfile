@@ -33,18 +33,18 @@ pipeline {
     stage('Checkout') {
       steps{
         echo "------------>Checkout<------------"
-	checkout([
-		$class: 'GitSCM', 
-		branches: [[name: '*/master']], 
-		doGenerateSubmoduleConfigurations: false, 
-		extensions: [], 
-		gitTool: 'Default', 
-		submoduleCfg: [], 
-		userRemoteConfigs: [[
-		credentialsId: 'GitHub_verodriguezrSoft',
-		url:'https://github.com/verodriguezrSoft/backed-clinica-especializada-spring-boot'
-		]]
-	])
+        checkout([
+            $class: 'GitSCM',
+            branches: [[name: '*/master']],
+            doGenerateSubmoduleConfigurations: false,
+            extensions: [],
+            gitTool: 'Default',
+            submoduleCfg: [],
+            userRemoteConfigs: [[
+            credentialsId: 'GitHub_verodriguezrSoft',
+            url:'https://github.com/verodriguezrSoft/backed-clinica-especializada-spring-boot'
+            ]]
+        ])
 
       }
     }
@@ -58,7 +58,7 @@ pipeline {
 		echo '------------>Empiezo<------------'
 		sonarqubeMasQualityGatesP(
 		    sonarKey:'co.com.ceiba.adn:medicina.especializada.victor.rodriguez',
-        	sonarName:'"CeibaADN-MedicinaEspecializada(victor.rodriguez)""',
+        	sonarName:'CeibaADN-MedicinaEspecializada(victor.rodriguez)',
         	sonarPathProperties:'./microservicio/sonar-project.properties')
 		echo '------------>Termino<------------'
       }
