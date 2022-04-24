@@ -1,0 +1,1 @@
+insert into festivo (dia, mes_numerico, anio) values (:dia, :mesNumerico, :anio)

@@ -1,0 +1,1 @@
+select id, dia, mes_numerico, anio  from festivo

@@ -1,0 +1,1 @@
+select id, nombre, especialidad from medico

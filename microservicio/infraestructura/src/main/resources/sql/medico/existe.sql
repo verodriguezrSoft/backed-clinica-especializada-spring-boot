@@ -1,0 +1,1 @@
+select count(1) from medico where nombre = :nombre

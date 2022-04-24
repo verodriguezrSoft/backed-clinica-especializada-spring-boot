@@ -1,0 +1,1 @@
+insert into usuario (nombre, email, numero_telefono, fecha_creacion) values (:nombre, :email, :numeroTelefono, :fechaCreacion)

@@ -1,0 +1,1 @@
+select count(1) from festivo where anio = :anio and mes_numerico = :mes and dia = :dia
