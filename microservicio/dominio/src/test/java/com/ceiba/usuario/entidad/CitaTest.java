@@ -11,20 +11,22 @@ import java.time.LocalDateTime;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CitaTest {
-//    @Test
-//    @DisplayName("Deberia crear correctamente la cita")
-//    void deberiaCrearCorrectamenteElUsusuario() {
-//
-//        LocalDateTime ahora = LocalDateTime.now();
-//
-//        Cita cita = new CitaTestDataBuilder().conId(1L).conFechaCita(ahora).conFechaActualizacion(ahora).build();
-//
-//        assertEquals(1, cita.getId());
-//        assertEquals(1234L, cita.getIdUsuario());
-//        assertEquals(ahora, cita.getFechaCita());
-//        assertEquals(ahora, cita.getFechaActualizacion());
-//        assertEquals(123456L, cita.getIdEspecialidad());
-//        assertEquals(12345L, cita.getIdMedico());
-//        assertEquals(new BigDecimal("20000"), cita.getPrecioCita());
-//    }
+    @Test
+    @DisplayName("Deberia crear correctamente la cita")
+    void deberiaCrearCorrectamenteElUsusuario() {
+
+        LocalDateTime ahora = LocalDateTime.now();
+
+        Cita cita = new CitaTestDataBuilder().conId(1L).conFechaCita(ahora).conFechaActualizacion(ahora).build();
+
+        assertEquals(1, cita.getId());
+        assertEquals(1234L, cita.getIdUsuario());
+        assertEquals(ahora, cita.getFechaCita());
+        assertEquals(ahora, cita.getFechaActualizacion());
+        assertEquals(1, cita.getIdEspecialidad());
+        assertEquals(12345L, cita.getIdMedico());
+        assertEquals(new BigDecimal("20000"), cita.getPrecioCita());
+        assertEquals(new BigDecimal("3475.2"), cita.getValorTRM());
+        assertEquals("US", cita.getTipoMoneda());
+    }
 }

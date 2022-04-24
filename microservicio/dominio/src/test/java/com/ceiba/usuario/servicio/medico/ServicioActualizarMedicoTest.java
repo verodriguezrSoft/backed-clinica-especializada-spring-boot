@@ -16,16 +16,16 @@ import org.mockito.Mockito;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ServicioActualizarMedicoTest {
-//    @Test
-//    @DisplayName("Deberia validar la existencia previa del medico")
-//    void deberiaValidarLaExistenciaPreviaDelUsuario() {
-//        // arrange
-//        Medico usuario = new MedicoTestDataBuilder().conId(1L).build();
-//        RepositorioMedico repositorioMedico = Mockito.mock(RepositorioMedico.class);
-//        Mockito.when(repositorioMedico.existePorId(Mockito.anyLong())).thenReturn(false);
-//        ServicioActualizarMedico servicioActualizarUsuario = new ServicioActualizarMedico(repositorioMedico);
-//        // act - assert
-//        BasePrueba.assertThrows(() -> servicioActualizarUsuario.ejecutar(usuario), ExcepcionDuplicidad.class,"El usuario ya existe en el sistema");
-//    }
+    @Test
+    @DisplayName("Deberia validar la existencia previa del medico")
+    void deberiaValidarLaExistenciaPreviaDelUsuario() {
+        // arrange
+        Medico medico = new MedicoTestDataBuilder().conId(1L).build();
+        RepositorioMedico repositorioMedico = Mockito.mock(RepositorioMedico.class);
+        Mockito.when(repositorioMedico.existePorId(Mockito.anyLong())).thenReturn(false);
+        ServicioActualizarMedico servicioActualizarMedico = new ServicioActualizarMedico(repositorioMedico);
+        // act - assert
+        BasePrueba.assertThrows(() -> servicioActualizarMedico.ejecutar(medico), ExcepcionDuplicidad.class,"El medico no existe en el sistema");
+    }
 
 }

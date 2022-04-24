@@ -18,16 +18,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ServicioActualizarCitaTest {
 
-//    @Test
-//    @DisplayName("Deberia validar la existencia previa del cita")
-//    void deberiaValidarLaExistenciaPreviaDelaCita() {
-//        // arrange
-//        Cita cita = new CitaTestDataBuilder().conId(1L).build();
-//        RepositorioCita repositorioCita = Mockito.mock(RepositorioCita.class);
-//        Mockito.when(repositorioCita.existePorId(Mockito.anyLong())).thenReturn(false);
-//        DaoFestivo daoFestivo = Mockito.mock(DaoFestivo.class);
-//        ServicioActualizarCita servicioActualizarUsuario = new ServicioActualizarCita(repositorioCita, daoFestivo);
-//        // act - assert
-//        BasePrueba.assertThrows(() -> servicioActualizarUsuario.ejecutar(cita), ExcepcionDuplicidad.class,"La cita no existe en el sistema");
-//    }
+    @Test
+    @DisplayName("Deberia validar la existencia previa del cita")
+    void deberiaValidarLaExistenciaPreviaDelaCita() {
+        // arrange
+        Cita cita = new CitaTestDataBuilder().conId(1L).build();
+        RepositorioCita repositorioCita = Mockito.mock(RepositorioCita.class);
+        Mockito.when(repositorioCita.existePorId(Mockito.anyLong())).thenReturn(false);
+        DaoFestivo daoFestivo = Mockito.mock(DaoFestivo.class);
+        ServicioActualizarCita servicioActualizarUsuario = new ServicioActualizarCita(repositorioCita, daoFestivo);
+        // act - assert
+        BasePrueba.assertThrows(() -> servicioActualizarUsuario.ejecutar(cita), ExcepcionDuplicidad.class,"La cita no existe en el sistema");
+    }
 }

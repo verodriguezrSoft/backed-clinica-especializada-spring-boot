@@ -1,6 +1,7 @@
 package com.ceiba.usuario.servicio.cita;
 
 import com.ceiba.dominio.excepcion.ExcepcionDiasNoValidos;
+import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.usuario.enums.Especialidades;
 import com.ceiba.usuario.modelo.entidad.Cita;
 import com.ceiba.usuario.puerto.dao.DaoFestivo;
@@ -12,13 +13,9 @@ import java.util.Calendar;
 
 public class ServicioActualizarCita {
 
-//    private static final String EL_USUARIO_NO_EXISTE_EN_EL_SISTEMA = "La cita no existe en el sistema";
-
-
+    private static final String LA_CITA_NO_EXISTE_EN_EL_SISTEMA = "La cita no existe en el sistema";
     private static final String SABADOS_Y_DOMINGOS_NO_SE_HACEN_CITAS = "Los días sábados y dignas no se pueden hacer citas";
-
     private final RepositorioCita repositorioCita;
-
     private final DaoFestivo daoFestivo;
 
     public ServicioActualizarCita(RepositorioCita repositorioCita, DaoFestivo daoFestivo) {
@@ -27,19 +24,19 @@ public class ServicioActualizarCita {
     }
 
     public void ejecutar(Cita cita) {
-//        validarExistenciaPrevia(cita);
+        validarExistenciaPrevia(cita);
         calcularDiaCita(cita);
         validarDiaFindeSemana(cita);
         validarSiEsfestivo(cita);
         this.repositorioCita.actualizar(cita);
     }
 
-//    private void validarExistenciaPrevia(Cita cita) {
-//        boolean existe = this.repositorioCita.existePorId(cita.getId());
-//        if(existe) {
-//            throw new ExcepcionDuplicidad(LA_CITA_YA_EXISTE_EN_EL_SISTEMA);
-//        }
-//    }
+    private void validarExistenciaPrevia(Cita cita) {
+        boolean existe = this.repositorioCita.existePorId(cita.getId());
+        if(!existe) {
+            throw new ExcepcionDuplicidad(LA_CITA_NO_EXISTE_EN_EL_SISTEMA);
+        }
+    }
 
     private void validarDiaFindeSemana(Cita cita){
         Calendar actualCalendar = ConversionFechas.localDateTimeToCalendar(cita.getFechaCita());

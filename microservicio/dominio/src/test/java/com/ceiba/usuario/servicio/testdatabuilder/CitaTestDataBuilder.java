@@ -24,7 +24,7 @@ public class CitaTestDataBuilder {
         idUsuario = 1234L;
         fechaCita = LocalDateTime.now();
         fechaActualizacion = LocalDateTime.now();
-        idEspecialidad = 123456L;
+        idEspecialidad = 1L;
         idMedico = 12345L;
         precioCita = new BigDecimal("20000");
         valorTRM = new BigDecimal("3475.2");
