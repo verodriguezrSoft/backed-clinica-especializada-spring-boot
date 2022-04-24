@@ -37,18 +37,18 @@ class ComandoControladorMedicoTest {
     private MockMvc mocMvc;
 
 
-//    @Test
-//    @DisplayName("Deberia crear un medico")
-//    void deberiaCrearUnMedico() throws Exception{
-//        // arrange
-//        ComandoMedico medico = new ComandoMedicoTestDataBuilder().build();
-//        // act - assert
-//        mocMvc.perform(post("/medicos")
-//                .contentType(MediaType.APPLICATION_JSON)
-//                .content(objectMapper.writeValueAsString(medico)))
-//                .andExpect(status().isOk())
-//                .andExpect(content().json("{'valor': 2}"));
-//    }
+    @Test
+    @DisplayName("Deberia crear un medico")
+    void deberiaCrearUnMedico() throws Exception{
+        // arrange
+        ComandoMedico medico = new ComandoMedicoTestDataBuilder().build();
+        // act - assert
+        mocMvc.perform(post("/medicos")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(medico)))
+                .andExpect(status().isOk())
+                .andExpect(content().json("{'valor': 2}"));
+    }
 
 
     @Test

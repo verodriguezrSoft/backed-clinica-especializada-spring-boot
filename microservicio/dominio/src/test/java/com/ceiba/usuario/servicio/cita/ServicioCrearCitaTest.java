@@ -30,4 +30,19 @@ class ServicioCrearCitaTest {
         BasePrueba.assertThrows(() -> servicioCrearCita.ejecutar(cita), ExcepcionDuplicidad.class,"La cita ya existe");
     }
 
+    @Test
+    @DisplayName("Deberia crear una cita de manera correcta")
+    void deberiaCrearUnaCitaCorrectamente(){
+        Cita cita = new CitaTestDataBuilder().build();
+        RepositorioCita repositorioCita = Mockito.mock(RepositorioCita.class);
+        Mockito.when(repositorioCita.existePorId(Mockito.anyLong())).thenReturn(true);
+        Mockito.when(repositorioCita.crear(cita)).thenReturn(10L);
+        DaoFestivo daoFestivo = Mockito.mock(DaoFestivo.class);
+        ServicioCrearCita servicioCrearCita = new ServicioCrearCita(repositorioCita, daoFestivo);
+        // act
+        Long idCita = servicioCrearCita.ejecutar(cita);
+        assertEquals(10L,idCita);
+        Mockito.verify(repositorioCita, Mockito.times(1)).crear(cita);
+    }
+
 }

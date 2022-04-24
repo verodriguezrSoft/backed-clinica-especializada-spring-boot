@@ -20,9 +20,9 @@ class ServicioCrearMedicoTest {
     @DisplayName("Deberia lanzar una exepcion cuando se valide la existencia del Usuario")
     void deberiaLanzarUnaExepcionCuandoSeValideLaExistenciaDelUsuario() {
         // arrange
-        Medico medico = new MedicoTestDataBuilder().build();
+        Medico medico = new MedicoTestDataBuilder().conId(1l).build();
         RepositorioMedico repositorioMedico = Mockito.mock(RepositorioMedico.class);
-        Mockito.when(repositorioMedico.existe(Mockito.anyString())).thenReturn(true);
+        Mockito.when(repositorioMedico.existePorId(Mockito.anyLong())).thenReturn(true);
         ServicioCrearMedico servicioCrearMedico = new ServicioCrearMedico(repositorioMedico);
         // act - assert
         BasePrueba.assertThrows(() -> servicioCrearMedico.ejecutar(medico), ExcepcionDuplicidad.class,"El medico ya existe en el sistema");
