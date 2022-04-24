@@ -56,7 +56,7 @@ pipeline {
 		echo '------------>Empiezo<------------'
 		sonarqubeMasQualityGatesP(
 		    sonarKey:'co.com.ceiba.adn:medicina.especializada.victor.rodriguez',
-        	sonarName:'CeibaADN-MedicinaEspecializada(victor.rodriguez)',
+        	sonarName:'''"CeibaADN-MedicinaEspecializada(victor.rodriguez)"''',
         	sonarPathProperties:'./sonar-project.properties')
 		echo '------------>Termino<------------'
       }
