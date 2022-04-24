@@ -72,7 +72,9 @@ public class ServicioCrearCita {
         }
 
         BigDecimal dobleValorFestivo = new BigDecimal("2");
-        BigDecimal valorFinal = Especialidades.getById(cita.getIdEspecialidad()).getValorEspecialidad().multiply(dobleValorFestivo);
+        BigDecimal valorFinal = Especialidades.getById(cita.getIdEspecialidad()).getValorEspecialidad().multiply(dobleValorFestivo).setScale(2, BigDecimal.ROUND_HALF_DOWN);
         cita.setPrecioCita(valorFinal);
     }
+
+
 }

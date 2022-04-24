@@ -1,7 +1,6 @@
 package com.ceiba.usuario.servicio.cita;
 
 import com.ceiba.dominio.excepcion.ExcepcionDiasNoValidos;
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.usuario.enums.Especialidades;
 import com.ceiba.usuario.modelo.entidad.Cita;
 import com.ceiba.usuario.puerto.dao.DaoFestivo;

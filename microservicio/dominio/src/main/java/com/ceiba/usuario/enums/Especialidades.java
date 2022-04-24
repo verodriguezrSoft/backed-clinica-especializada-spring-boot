@@ -6,10 +6,10 @@ import java.math.BigDecimal;
 
 @Getter
 public enum Especialidades {
-    CARDIALOGIA_CLINICA(1L, "CARDIOLOGIA CLINICA", new BigDecimal(200000)),
-    CIRUGIA_GENERAL(2L, "CIRUGIA GENERAL", new BigDecimal(2000000)),
-    PRUEBA_COVID(3L, "PRUEBA COVID", new BigDecimal(300000)),
-    DERMATOLOGIA(4L, "DERMATOLOGIA", new BigDecimal(50000));
+    CARDIALOGIA_CLINICA(1L, "CARDIOLOGIA CLINICA", new BigDecimal(100)),
+    CIRUGIA_GENERAL(2L, "CIRUGIA GENERAL", new BigDecimal(1500)),
+    PRUEBA_COVID(3L, "PRUEBA COVID", new BigDecimal(150)),
+    DERMATOLOGIA(4L, "DERMATOLOGIA", new BigDecimal(160));
 
     private final Long idEspecialidad;
     private final String nommbreEspecialdiad;

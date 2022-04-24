@@ -1,1 +1,1 @@
-select id, id_usuario, fecha_cita, fecha_actualizacion, id_especialidad, id_medico, precio_cita from cita
+select id, id_usuario, fecha_cita, fecha_actualizacion, id_especialidad, id_medico, precio_cita, valor_trm, tipo_moneda  from cita

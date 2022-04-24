@@ -20,4 +20,6 @@ public class ComandoCita {
     private Long idEspecialidad;
     private Long idMedico;
     private BigDecimal precioCita;
+    private BigDecimal valorTRM;
+    private String tipoMoneda;
 }

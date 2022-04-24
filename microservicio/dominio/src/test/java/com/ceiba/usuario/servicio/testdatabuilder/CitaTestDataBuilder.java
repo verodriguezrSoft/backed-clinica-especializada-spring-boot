@@ -16,8 +16,9 @@ public class CitaTestDataBuilder {
     private LocalDateTime fechaActualizacion;
     private Long idEspecialidad;
     private Long idMedico;
-
     private BigDecimal precioCita;
+    private BigDecimal valorTRM;
+    private String tipoMoneda;
 
     public CitaTestDataBuilder() {
         idUsuario = 1234L;
@@ -26,6 +27,8 @@ public class CitaTestDataBuilder {
         idEspecialidad = 123456L;
         idMedico = 12345L;
         precioCita = new BigDecimal("20000");
+        valorTRM = new BigDecimal("3475.2");
+        tipoMoneda = "US";
     }
 
     public CitaTestDataBuilder conId(Long id) {
@@ -44,6 +47,6 @@ public class CitaTestDataBuilder {
     }
 
     public Cita build(){
-        return new Cita(id, idUsuario, fechaCita, fechaActualizacion, idEspecialidad, idMedico, precioCita);
+        return new Cita(id, idUsuario, fechaCita, fechaActualizacion, idEspecialidad, idMedico, precioCita, valorTRM, tipoMoneda);
     }
 }

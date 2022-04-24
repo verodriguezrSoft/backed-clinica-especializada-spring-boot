@@ -16,8 +16,9 @@ public class ComandoCitasTestDataBuilder {
     private LocalDateTime fechaActualizacion;
     private Long idEspecialidad;
     private Long idMedico;
-
     private BigDecimal precioCita;
+    private BigDecimal valorTRM;
+    private String tipoMoneda;
 
     public ComandoCitasTestDataBuilder() {
         idUsuario = 1234L;
@@ -26,6 +27,8 @@ public class ComandoCitasTestDataBuilder {
         idEspecialidad = 1L;
         idMedico = 12345L;
         precioCita = new BigDecimal("20000");
+        valorTRM = new BigDecimal("3475.2");
+        tipoMoneda = "US";
     }
 
 //    public ComandoCitasTestDataBuilder conNombre(String nombre) {
@@ -34,6 +37,6 @@ public class ComandoCitasTestDataBuilder {
 //    }
 
     public ComandoCita build() {
-        return new ComandoCita(id, idUsuario, fechaCita, fechaActualizacion, idEspecialidad, idMedico, precioCita);
+        return new ComandoCita(id, idUsuario, fechaCita, fechaActualizacion, idEspecialidad, idMedico, precioCita, valorTRM, tipoMoneda);
     }
 }

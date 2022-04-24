@@ -22,6 +22,8 @@ create table cita(
  id_especialidad int(11) not null,
  id_medico int(11) not null,
  precio_cita decimal(20, 2) not null,
+ valor_trm decimal(20, 2) not null,
+ tipo_moneda varchar(100) not null,
  primary key (id)
 );
 

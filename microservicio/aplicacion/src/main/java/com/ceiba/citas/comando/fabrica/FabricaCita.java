@@ -15,7 +15,9 @@ public class FabricaCita {
                 comandoCita.getFechaActualizacion(),
                 comandoCita.getIdEspecialidad(),
                 comandoCita.getIdMedico(),
-                comandoCita.getPrecioCita()
+                comandoCita.getPrecioCita(),
+                comandoCita.getValorTRM(),
+                comandoCita.getTipoMoneda()
         );
     }
 }
