@@ -32,6 +32,7 @@ pipeline {
   stages{
     stage('Checkout') {
       steps{
+
         echo "------------>Checkout<------------"
         checkout([
             $class: 'GitSCM',
@@ -59,7 +60,7 @@ pipeline {
 		sonarqubeMasQualityGatesP(
 		    sonarKey:'co.com.ceiba.adn:medicina.especializada.victor.rodriguez',
         	sonarName:'CeibaADN-MedicinaEspecializada(victor.rodriguez)',
-        	sonarPathProperties:'./microservicio/sonar-project.properties')
+        	sonarPathProperties:'./sonar-project.properties')
 		echo '------------>Termino<------------'
       }
     }
