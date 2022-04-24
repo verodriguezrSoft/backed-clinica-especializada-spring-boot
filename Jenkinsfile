@@ -51,9 +51,28 @@ pipeline {
       }
     }
 
+   stage('Compile & Unit Tests') {
+      steps{
+
+       echo "------------>Clean Tests<------------"
+
+       sh 'chmod +x ./microservicio/gradlew'
+       sh './microservicio/gradlew --b ./microservicio/build.gradle clean'
+
+
+        echo "------------>compile & Unit Tests<------------"
+        sh 'chmod +x ./microservicio/gradlew'
+        sh './microservicio/gradlew --b ./microservicio/build.gradle test'
+       }
+    }
+
     stage('Static Code Analysis') {
       steps{
-		echo '------------>Empiezo<------------'
+
+        withSonarQubeEnv('Sonar') {
+			sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
+	  	}
+	  	echo '------------>Empiezo<------------'
 		sonarqubeMasQualityGatesP(
 		    sonarKey:'co.com.ceiba.adn:medicina.especializada.victor.rodriguez',
         	sonarName:'''"CeibaADN-MedicinaEspecializada(victor.rodriguez)"''',
@@ -71,13 +90,7 @@ pipeline {
       }
     }
 
-    stage('Compile & Unit Tests') {
-      steps{
-		echo "------------>compile & Unit Tests<------------"
-		sh 'chmod +x ./microservicio/gradlew'
-		sh './microservicio/gradlew --b ./microservicio/build.gradle test'
-       }
-    }
+
 
   }
 
