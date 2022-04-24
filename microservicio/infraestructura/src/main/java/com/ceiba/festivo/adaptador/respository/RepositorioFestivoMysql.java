@@ -25,6 +25,12 @@ public class RepositorioFestivoMysql implements RespositorioFestivo {
     @SqlStatement(namespace="festivo", value="existe")
     private static String sqlExiste;
 
+    @SqlStatement(namespace="festivo", value="existePorFecha")
+    private static String sqlExistePorFecha;
+
+    @SqlStatement(namespace="festivo", value="existePorId")
+    private static String sqlExistePorId;
+
 
     public RepositorioFestivoMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
@@ -42,11 +48,33 @@ public class RepositorioFestivoMysql implements RespositorioFestivo {
     }
 
     @Override
-    public void eliminar(Long id) {
+    public void eliminar(Festivo festivo) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("anio", festivo.getAnio());
+        paramSource.addValue("mes", festivo.getMesNumerico());
+        paramSource.addValue("dia", festivo.getDia());
+
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
+    }
+
+
+    @Override
+    public boolean exitePorFecha(Festivo festivo) {
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("anio", festivo.getAnio());
+        paramSource.addValue("mes", festivo.getMesNumerico());
+        paramSource.addValue("dia", festivo.getDia());
+
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorFecha, paramSource, Boolean.class);
+    }
+
+    @Override
+    public boolean exitePorId(Long id) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", id);
 
-        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
-
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorId,paramSource, Boolean.class);
     }
+
+
 }

@@ -9,7 +9,7 @@ import com.ceiba.usuario.puerto.repositorio.RespositorioFestivo;
 
 public class ServicioCrearFestivo {
 
-    private static final String EL_USUARIO_YA_EXISTE_EN_EL_SISTEMA = "El usuario no existe en el sistema";
+    private static final String EL_FESTIVO_YA_EXISTE = "El festivo ya existe";
 
     private final RespositorioFestivo repRespositorioFestivo;
 
@@ -23,9 +23,9 @@ public class ServicioCrearFestivo {
     }
 
     private void validarExistenciaPrevia(Festivo festivo) {
-//        boolean existe = this.repRespositorioFestivo.existe(medico.getNombre());
-//        if(existe) {
-//            throw new ExcepcionDuplicidad(EL_USUARIO_YA_EXISTE_EN_EL_SISTEMA);
-//        }
+        boolean existe = this.repRespositorioFestivo.exitePorFecha(festivo);
+        if(existe) {
+            throw new ExcepcionDuplicidad(EL_FESTIVO_YA_EXISTE);
+        }
     }
 }

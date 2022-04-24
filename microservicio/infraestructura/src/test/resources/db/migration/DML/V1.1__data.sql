@@ -3,4 +3,4 @@ insert into usuario (nombre, email, numero_telefono, fecha_creacion) values ('te
 insert into medico (id, nombre, especialidad) values (1, '1234', 'optometra');
 insert into cita (id, id_usuario, fecha_cita, fecha_actualizacion, id_especialidad, id_medico, precio_cita,valor_trm, tipo_moneda)
 values (1, 1234, now(), now(), 1, 12345, 20000, 3475.2, 'US');
-insert into festivo (dia, mes_numerico, anio) values (25, 04, 2022)
+insert into festivo (dia, mes_numerico, anio) values ( 25, 4, 2022)

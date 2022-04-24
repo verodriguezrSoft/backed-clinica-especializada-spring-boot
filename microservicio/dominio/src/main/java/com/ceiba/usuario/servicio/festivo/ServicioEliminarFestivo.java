@@ -1,5 +1,6 @@
 package com.ceiba.usuario.servicio.festivo;
 
+import com.ceiba.usuario.modelo.entidad.Festivo;
 import com.ceiba.usuario.puerto.repositorio.RepositorioMedico;
 import com.ceiba.usuario.puerto.repositorio.RespositorioFestivo;
 
@@ -11,7 +12,7 @@ public class ServicioEliminarFestivo {
         this.repRespositorioFestivo = repRespositorioFestivo;
     }
 
-    public void ejecutar(Long id) {
-        this.repRespositorioFestivo.eliminar(id);
+    public void ejecutar(Festivo festivo) {
+        this.repRespositorioFestivo.eliminar(festivo);
     }
 }

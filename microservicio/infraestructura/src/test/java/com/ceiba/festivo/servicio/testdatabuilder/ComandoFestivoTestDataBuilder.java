@@ -15,8 +15,13 @@ public class ComandoFestivoTestDataBuilder {
 
     public ComandoFestivoTestDataBuilder() {
         dia = 25;
-        mesNumerico = 04;
+        mesNumerico = 6;
         anio = 2022;
+    }
+
+    public ComandoFestivoTestDataBuilder porId(Long id){
+        this.id = id;
+        return this;
     }
 
 

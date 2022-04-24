@@ -17,14 +17,14 @@ public class ServicioActualizarFestivo {
     }
 
     public void ejecutar(Festivo festivo) {
-//        validarExistenciaPrevia(festivo);
+        validarExistenciaPrevia(festivo);
         this.repRespositorioFestivo.actualizar(festivo);
     }
 
     private void validarExistenciaPrevia(Festivo festivo) {
-//        boolean existe = this.repRespositorioFestivo.existePorId(medico.getId());
-//        if(!existe) {
-//            throw new ExcepcionDuplicidad(EL_FESTIVO_NO_EXISTE_EN_EL_SISTEMA);
-//        }
+        boolean existe = this.repRespositorioFestivo.exitePorId(festivo.getId());
+        if(!existe) {
+            throw new ExcepcionDuplicidad(EL_FESTIVO_NO_EXISTE_EN_EL_SISTEMA);
+        }
     }
 }

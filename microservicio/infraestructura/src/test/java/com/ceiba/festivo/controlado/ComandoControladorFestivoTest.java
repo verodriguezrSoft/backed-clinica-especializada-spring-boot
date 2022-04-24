@@ -41,6 +41,7 @@ class ComandoControladorFestivoTest {
     @Test
     @DisplayName("Deberia crear una festivo")
     void deberiaCrearUnFestivo() throws Exception{
+        // arrange
         ComandoFestivo festivo = new ComandoFestivoTestDataBuilder().build();
         // act - assert
         mocMvc.perform(post("/festivos")

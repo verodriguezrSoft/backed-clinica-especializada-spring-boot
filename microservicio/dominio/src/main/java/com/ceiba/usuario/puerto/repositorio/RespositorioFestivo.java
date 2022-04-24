@@ -5,21 +5,34 @@ import com.ceiba.usuario.modelo.entidad.Medico;
 
 public interface RespositorioFestivo {
     /**
-     * Permite crear un usuario
+     * Permite crear un festivo
      * @param festivo
      * @return el id generado
      */
     Long crear(Festivo festivo);
 
     /**
-     * Permite actualizar un usuario
+     * Permite actualizar un festivo
      * @param festivo
      */
     void actualizar(Festivo festivo);
 
     /**
-     * Permite eliminar un usuario
+     * Permite eliminar un festivo
+     * @param festivo
+     */
+    void eliminar(Festivo festivo);
+
+    /**
+     * Permite eliminar un festivo
+     * @param festivo
+     */
+    boolean exitePorFecha(Festivo festivo);
+
+    /**
+     * Permite eliminar un festivo
      * @param id
      */
-    void eliminar(Long id);
+    boolean exitePorId(Long id);
+
 }
