@@ -104,15 +104,15 @@ bootJar {
     version =  version
 }
 
-sonarqube {
-	properties{
-		property "sonar.host.url", "https://sonar.ceiba.com.co"
-		property "sonar.sourceEncoding", "UTF-8"
-		property "sonar.projectName", "CeibaADN-MedicinaEspecializada/CeibaADN(victor.rodriguez)"
-		property "sonar.projectKey", "co.com.ceiba:medicina.especializada.victor.rodriguez"
-		property "sonar.exclusions",
-				"microservicio/dominio/src/main/java/com/ceiba/usuario/modelo/**/*," +
-				"microservicio/dominio/src/main/java/com/ceiba/usuario/enums/**/*," +
-				"microservicio/dominio/src/main/java/com/ceiba/usuario/puerto/dao/**/*"
-	}
-}
+//sonarqube {
+//	properties{
+//		property "sonar.host.url", "https://sonar.ceiba.com.co"
+//		property "sonar.sourceEncoding", "UTF-8"
+//		property "sonar.projectName", "CeibaADN-MedicinaEspecializada"
+//		property "sonar.projectKey", "co.com.ceiba:medicina.especializada.victor.rodriguez"
+//		property "sonar.exclusions",
+//				"microservicio/dominio/src/main/java/com/ceiba/usuario/modelo/**/*," +
+//				"microservicio/dominio/src/main/java/com/ceiba/usuario/enums/**/*," +
+//				"microservicio/dominio/src/main/java/com/ceiba/usuario/puerto/dao/**/*"
+//	}
+//}
