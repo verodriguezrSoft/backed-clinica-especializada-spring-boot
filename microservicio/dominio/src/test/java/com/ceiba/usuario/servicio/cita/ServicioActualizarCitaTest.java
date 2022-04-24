@@ -30,4 +30,20 @@ class ServicioActualizarCitaTest {
         // act - assert
         BasePrueba.assertThrows(() -> servicioActualizarUsuario.ejecutar(cita), ExcepcionDuplicidad.class,"La cita no existe en el sistema");
     }
+
+    @Test
+    @DisplayName("Deberia actualizar una cita de manera correcta")
+    void deberiaCrearUnaActualizarCitaCorrectamente(){
+        Cita cita = new CitaTestDataBuilder().conId(1L).build();
+        RepositorioCita repositorioCita = Mockito.mock(RepositorioCita.class);
+        Mockito.when(repositorioCita.existePorId(Mockito.anyLong())).thenReturn(true);
+        DaoFestivo daoFestivo = Mockito.mock(DaoFestivo.class);
+        ServicioActualizarCita servicioActualizarCita = new ServicioActualizarCita(repositorioCita, daoFestivo);
+        // act
+        servicioActualizarCita.ejecutar(cita);
+        //aserr
+        Mockito.verify(repositorioCita, Mockito.times(1)).actualizar(cita);
+    }
+
+
 }
