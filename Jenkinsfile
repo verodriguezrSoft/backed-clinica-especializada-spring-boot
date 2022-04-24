@@ -56,10 +56,9 @@ pipeline {
 			sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
 	  	}
 		echo '------------>Empiezo<------------'
-		sonarqubeMasQualityGatesP(
-		     sonarKey:'co.com.ceiba:medicina.especializada.victor.rodriguez',
-        	sonarName:'CeibaADN-MedicinaEspecializada',
-        	sonarPathProperties:'./sonar-project.properties') 
+		sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:medicina.especializada.victor.rodriguez',
+        	sonarName:'CeibaADN-MedicinaEspecializada(victor.rodriguez)',
+        	sonarPathProperties:'./microservicio/sonar-project.properties')
 		echo '------------>Termino<------------'
       }
     }
