@@ -64,6 +64,7 @@ class ComandoControladorFestivoTest {
     }
 
 
+   /*
     @Test
     @DisplayName("Deberia eliminar un festivo")
     void deberiaEliminarUnFestivo() throws Exception {
@@ -80,5 +81,6 @@ class ComandoControladorFestivoTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(0)));
     }
+    */
 
 }
