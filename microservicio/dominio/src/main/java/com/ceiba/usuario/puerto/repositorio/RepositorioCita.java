@@ -1,6 +1,7 @@
 package com.ceiba.usuario.puerto.repositorio;
 
 import com.ceiba.usuario.modelo.entidad.Cita;
+import com.ceiba.usuario.modelo.entidad.Festivo;
 
 public interface RepositorioCita {
     /**

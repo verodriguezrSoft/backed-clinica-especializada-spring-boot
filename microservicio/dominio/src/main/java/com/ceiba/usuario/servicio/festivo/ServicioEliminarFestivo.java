@@ -12,7 +12,7 @@ public class ServicioEliminarFestivo {
         this.repRespositorioFestivo = repRespositorioFestivo;
     }
 
-    public void ejecutar(Festivo festivo) {
-        this.repRespositorioFestivo.eliminar(festivo);
+    public void ejecutar(Long id) {
+        this.repRespositorioFestivo.eliminar(id);
     }
 }

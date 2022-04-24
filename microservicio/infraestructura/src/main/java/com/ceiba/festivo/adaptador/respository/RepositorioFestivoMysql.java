@@ -48,14 +48,12 @@ public class RepositorioFestivoMysql implements RespositorioFestivo {
     }
 
     @Override
-    public void eliminar(Festivo festivo) {
+    public void eliminar(Long id) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
-        paramSource.addValue("anio", festivo.getAnio());
-        paramSource.addValue("mes", festivo.getMesNumerico());
-        paramSource.addValue("dia", festivo.getDia());
+        paramSource.addValue("id", id);
 
         this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
-    }
+ }
 
 
     @Override

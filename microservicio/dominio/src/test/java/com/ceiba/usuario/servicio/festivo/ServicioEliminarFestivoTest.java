@@ -16,11 +16,10 @@ class ServicioEliminarFestivoTest {
     void deberiaEliminarElFestivoLlamandoAlRepositorio() {
         RespositorioFestivo respositorioFestivo = Mockito.mock(RespositorioFestivo.class);
         ServicioEliminarFestivo servicioEliminarFestivo = new ServicioEliminarFestivo(respositorioFestivo);
-        Festivo festivo = new FestivoTestBuilder().build();
 
-        servicioEliminarFestivo.ejecutar(festivo);
+        servicioEliminarFestivo.ejecutar(1L);
 
-        Mockito.verify(respositorioFestivo, Mockito.times(1)).eliminar(festivo);
+        Mockito.verify(respositorioFestivo, Mockito.times(1)).eliminar(1L);
     }
 
 }

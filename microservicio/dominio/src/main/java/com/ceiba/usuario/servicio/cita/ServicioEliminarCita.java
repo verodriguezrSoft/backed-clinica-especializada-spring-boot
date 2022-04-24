@@ -1,5 +1,6 @@
 package com.ceiba.usuario.servicio.cita;
 
+import com.ceiba.usuario.modelo.entidad.Festivo;
 import com.ceiba.usuario.puerto.repositorio.RepositorioCita;
 
 public class ServicioEliminarCita {

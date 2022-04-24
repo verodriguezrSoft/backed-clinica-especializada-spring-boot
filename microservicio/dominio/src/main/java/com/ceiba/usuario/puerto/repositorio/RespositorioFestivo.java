@@ -21,7 +21,7 @@ public interface RespositorioFestivo {
      * Permite eliminar un festivo
      * @param festivo
      */
-    void eliminar(Festivo festivo);
+    void eliminar(Long id);
 
     /**
      * Permite eliminar un festivo
