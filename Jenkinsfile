@@ -34,18 +34,19 @@ pipeline {
       steps{
 
         echo "------------>Checkout<------------"
-        checkout([
-            $class: 'GitSCM',
-            branches: [[name: '*/master']],
-            doGenerateSubmoduleConfigurations: false,
-            extensions: [],
-            gitTool: 'Default',
-            submoduleCfg: [],
-            userRemoteConfigs: [[
-            credentialsId: 'GitHub_verodriguezrSoft',
-            url:'https://github.com/verodriguezrSoft/backed-clinica-especializada-spring-boot'
-            ]]
-        ])
+        checkout scm
+//         checkout([
+//             $class: 'GitSCM',
+//             branches: [[name: '*/master']],
+//             doGenerateSubmoduleConfigurations: false,
+//             extensions: [],
+//             gitTool: 'Default',
+//             submoduleCfg: [],
+//             userRemoteConfigs: [[
+//             credentialsId: 'GitHub_verodriguezrSoft',
+//             url:'https://github.com/verodriguezrSoft/backed-clinica-especializada-spring-boot'
+//             ]]
+//         ])
 
       }
     }
