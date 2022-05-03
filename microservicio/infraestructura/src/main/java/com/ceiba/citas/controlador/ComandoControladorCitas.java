@@ -42,7 +42,6 @@ public class ComandoControladorCitas {
     @ApiOperation("Actualizar usuario")
     public void actualizar(@RequestBody ComandoCita comandoCita, @PathVariable Long id){
         comandoCita.setId(id);
-        comandoCita.setFechaCita(LocalDateTime.now());
         comandoCita.setFechaActualizacion(LocalDateTime.now());
         manejadorActualizarCita.ejecutar(comandoCita);
     }

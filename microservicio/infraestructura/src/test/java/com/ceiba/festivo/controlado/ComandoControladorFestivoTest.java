@@ -79,7 +79,8 @@ class ComandoControladorFestivoTest {
 
         mocMvc.perform(get("/festivos")
                         .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(0)));
     }
 
 

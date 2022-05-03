@@ -9,7 +9,8 @@ public enum Especialidades {
     CARDIALOGIA_CLINICA(1L, "CARDIOLOGIA CLINICA", new BigDecimal(100)),
     CIRUGIA_GENERAL(2L, "CIRUGIA GENERAL", new BigDecimal(1500)),
     PRUEBA_COVID(3L, "PRUEBA COVID", new BigDecimal(150)),
-    DERMATOLOGIA(4L, "DERMATOLOGIA", new BigDecimal(160));
+    DERMATOLOGIA(4L, "DERMATOLOGIA", new BigDecimal(160)),
+    OPTOMETRIA(5L, "OPTOMETRÍA", new BigDecimal(180));
 
     private final Long idEspecialidad;
     private final String nommbreEspecialdiad;

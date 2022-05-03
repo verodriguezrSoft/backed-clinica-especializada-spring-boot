@@ -18,4 +18,8 @@ public class ManejadorListarCitas {
     public List<DtoCita> ejecutar() {
         return this.daoCita.listar();
     }
+
+    public DtoCita ejecutarCitasUsuario(Long id) {
+        return this.daoCita.obtenerCita(id);
+    }
 }

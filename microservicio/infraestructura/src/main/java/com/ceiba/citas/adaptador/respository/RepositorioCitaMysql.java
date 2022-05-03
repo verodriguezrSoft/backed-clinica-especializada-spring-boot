@@ -27,7 +27,6 @@ public class RepositorioCitaMysql implements RepositorioCita {
     @SqlStatement(namespace="cita", value="existePorId")
     private static String sqlExistePorId;
 
-
     public RepositorioCitaMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
         this.customNamedParameterJdbcTemplate = customNamedParameterJdbcTemplate;
     }

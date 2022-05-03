@@ -19,6 +19,8 @@ import com.ceiba.usuario.servicio.usuario.ServicioCrearUsuario;
 import com.ceiba.usuario.servicio.usuario.ServicioEliminarUsuario;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class BeanServicio {
@@ -85,6 +87,16 @@ public class BeanServicio {
     @Bean
     public ServicioEliminarFestivo servicioEliminarFestivo(RespositorioFestivo respositorioFestivo){
         return new ServicioEliminarFestivo(respositorioFestivo);
+    }
+
+    @Bean
+    public WebMvcConfigurer corsConfigure() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**").allowedOrigins("http://localhost:4200").allowedMethods("*").allowedHeaders("*");
+            }
+        };
     }
 
 }
